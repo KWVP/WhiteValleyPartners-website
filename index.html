@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>White Valley Partners — Scientific &amp; Technical Advisory</title>
+  <meta name="description" content="Independent scientific and technical advisory: life sciences due diligence, specialist AI expertise, and software automation for SMEs.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --color-dark: #1C1C1E;
+      --color-light: #F8F8F7;
+      --color-gray-700: #4A4A4A;
+      --color-gray-600: #6B6B6B;
+      --color-gray-500: #8A8A8A;
+      --color-gray-400: #A0A0A0;
+      --color-gray-300: #C0C0C0;
+      --color-gray-200: #E5E5E3;
+      --color-gray-100: #F0F0EE;
+      --color-success: #1a5f1a;
+      --font-serif: 'Libre Baskerville', Georgia, serif;
+      --font-sans: 'Plus Jakarta Sans', Arial, Helvetica, sans-serif;
+    }
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-sans); background: var(--color-light); color: var(--color-dark); font-size: 16px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+    .container { max-width: 1000px; margin: 0 auto; padding: 0 40px; }
+    @media (max-width: 768px) { .container { padding: 0 24px; } }
+
+    /* HEADER */
+    header { padding: 14px 0; position: sticky; top: 0; background: rgba(248,248,247,0.97); backdrop-filter: blur(10px); z-index: 1000; border-bottom: 1px solid var(--color-gray-200); }
+    header .container { display: flex; justify-content: space-between; align-items: center; }
+    .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .logo svg { width: 40px; height: 40px; }
+    .logo-text { font-family: var(--font-serif); font-size: 17px; color: var(--color-dark); }
+    .logo-text span { display: block; font-family: var(--font-sans); font-size: 10px; font-weight: 500; letter-spacing: 2px; color: var(--color-gray-500); text-transform: uppercase; }
+    .header-right { display: flex; align-items: center; gap: 12px; }
+    .lang-toggle { display: flex; border: 1px solid var(--color-gray-200); border-radius: 4px; overflow: hidden; }
+    .lang-toggle button { padding: 8px 12px; font-size: 12px; font-weight: 600; border: none; background: var(--color-light); color: var(--color-gray-500); cursor: pointer; font-family: var(--font-sans); }
+    .lang-toggle button.active { background: var(--color-dark); color: var(--color-light); }
+    .header-cta { background: var(--color-dark); color: var(--color-light); padding: 12px 22px; font-size: 13px; font-weight: 600; text-decoration: none; border: 2px solid var(--color-dark); transition: all 0.2s; }
+    .header-cta:hover { background: transparent; color: var(--color-dark); }
+    @media (max-width: 600px) { .header-cta { display: none; } }
+
+    /* HERO */
+    .hero { padding: 110px 0 80px; text-align: center; }
+    @media (max-width: 768px) { .hero { padding: 70px 0 56px; } }
+    .hero-eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--color-gray-500); margin-bottom: 22px; }
+    .hero h1 { font-family: var(--font-serif); font-size: clamp(34px, 5.5vw, 56px); line-height: 1.12; margin-bottom: 24px; }
+    .hero-sub { font-size: 18px; color: var(--color-gray-600); max-width: 600px; margin: 0 auto 40px; }
+    .hero .rule { height: 1px; width: 56px; background: var(--color-dark); margin: 0 auto 40px; }
+    .hero-ctas { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
+    .btn-primary { display: inline-flex; align-items: center; gap: 10px; background: var(--color-dark); color: var(--color-light); padding: 17px 30px; font-size: 15px; font-weight: 600; text-decoration: none; border: 2px solid var(--color-dark); transition: all 0.2s; }
+    .btn-primary:hover { background: transparent; color: var(--color-dark); }
+    .btn-secondary { display: inline-flex; align-items: center; gap: 8px; color: var(--color-gray-600); padding: 17px 24px; font-size: 14px; font-weight: 500; text-decoration: none; border: 1px solid var(--color-gray-300); transition: all 0.2s; }
+    .btn-secondary:hover { border-color: var(--color-dark); color: var(--color-dark); }
+
+    /* SECTION SHELL */
+    .section-header { text-align: center; max-width: 580px; margin: 0 auto 52px; }
+    .section-header .eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--color-gray-500); margin-bottom: 14px; }
+    .section-header h2 { font-family: var(--font-serif); font-size: 32px; font-weight: 400; margin-bottom: 12px; }
+    .section-header p { color: var(--color-gray-600); font-size: 15px; }
+
+    /* ACTIVITIES */
+    .activities { padding: 80px 0; background: var(--color-gray-100); }
+    .activities-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    @media (max-width: 800px) { .activities-grid { grid-template-columns: 1fr; max-width: 460px; margin: 0 auto; } }
+    .activity-card { background: white; border: 1px solid var(--color-gray-200); padding: 36px 30px; border-radius: 8px; transition: all 0.2s; }
+    .activity-card:hover { border-color: var(--color-gray-400); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.05); }
+    .activity-num { font-family: var(--font-serif); font-size: 22px; color: var(--color-gray-400); margin-bottom: 16px; }
+    .activity-card-icon { width: 36px; height: 36px; margin-bottom: 16px; color: var(--color-success); }
+    .activity-card h3 { font-family: var(--font-serif); font-size: 20px; margin-bottom: 12px; line-height: 1.3; }
+    .activity-card p { font-size: 14px; color: var(--color-gray-600); line-height: 1.65; }
+
+    /* APPROACH */
+    .approach { padding: 80px 0; }
+    .approach-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+    @media (max-width: 800px) { .approach-grid { grid-template-columns: 1fr; gap: 32px; } }
+    .approach-text h2 { font-family: var(--font-serif); font-size: 30px; font-weight: 400; margin-bottom: 20px; line-height: 1.25; }
+    .approach-text p { color: var(--color-gray-600); font-size: 15px; margin-bottom: 16px; }
+    .approach-list { list-style: none; }
+    .approach-list li { display: flex; align-items: flex-start; gap: 14px; padding: 14px 0; border-bottom: 1px solid var(--color-gray-200); }
+    .approach-list li:last-child { border-bottom: none; }
+    .approach-list svg { width: 22px; height: 22px; color: var(--color-success); flex-shrink: 0; margin-top: 2px; }
+    .approach-list strong { display: block; font-size: 15px; margin-bottom: 2px; }
+    .approach-list span { font-size: 13px; color: var(--color-gray-600); }
+
+    /* CONTACT */
+    .contact { padding: 84px 0; background: var(--color-dark); text-align: center; }
+    .contact .eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--color-gray-500); margin-bottom: 14px; }
+    .contact h2 { font-family: var(--font-serif); font-size: 32px; color: var(--color-light); margin-bottom: 14px; }
+    .contact p { color: var(--color-gray-400); margin-bottom: 32px; max-width: 460px; margin-left: auto; margin-right: auto; }
+    .contact-email { display: inline-block; font-family: var(--font-serif); font-size: 22px; color: var(--color-light); text-decoration: none; border-bottom: 1px solid var(--color-gray-500); padding-bottom: 4px; transition: all 0.2s; }
+    .contact-email:hover { border-color: var(--color-light); }
+
+    /* FOOTER */
+    footer { padding: 26px 0; background: var(--color-dark); border-top: 1px solid rgba(255,255,255,0.08); }
+    .footer-content { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+    .footer-brand { display: flex; align-items: center; gap: 10px; }
+    .footer-brand svg { width: 28px; height: 28px; }
+    .footer-brand .logo-text { color: var(--color-light); font-size: 14px; font-family: var(--font-serif); }
+    .footer-brand .logo-text span { font-family: var(--font-sans); font-size: 8px; letter-spacing: 2px; color: var(--color-gray-500); }
+    footer p { font-size: 11px; color: var(--color-gray-500); }
+
+    [data-lang]{ display: none; }
+    [data-lang].show{ display: inline; }
+    h3[data-lang].show, p[data-lang].show, .block[data-lang].show { display: block; }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <a href="#" class="logo" aria-label="White Valley Partners">
+      <svg viewBox="0 0 80 80" fill="none" aria-hidden="true"><rect x="4" y="4" width="72" height="72" fill="none" stroke="#1C1C1E" stroke-width="3.5"/><text x="40" y="51" font-family="Libre Baskerville, Georgia, serif" font-size="26" font-weight="700" fill="#1C1C1E" text-anchor="middle">WV</text></svg>
+      <div class="logo-text">White Valley<span>Partners</span></div>
+    </a>
+    <div class="header-right">
+      <div class="lang-toggle">
+        <button id="btn-en" class="active" onclick="setLang('en')">EN</button>
+        <button id="btn-fr" onclick="setLang('fr')">FR</button>
+      </div>
+      <a href="#contact" class="header-cta"><span data-lang="en show">Contact</span><span data-lang="fr">Contact</span></a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-eyebrow"><span data-lang="en show">Scientific &amp; Technical Advisory</span><span data-lang="fr">Conseil Scientifique &amp; Technique</span></div>
+      <h1>
+        <span data-lang="en show">Scientific depth.<br>Applied judgement.</span>
+        <span data-lang="fr">Rigueur scientifique.<br>Jugement applique.</span>
+      </h1>
+      <p class="hero-sub">
+        <span data-lang="en show">Independent advisory at the intersection of analytical science, life sciences, and technology. We help investors and companies evaluate, build, and decide with rigour.</span>
+        <span data-lang="fr">Conseil independant a l'intersection des sciences analytiques, des sciences de la vie et de la technologie. Nous aidons investisseurs et entreprises a evaluer, construire et decider avec rigueur.</span>
+      </p>
+      <div class="rule"></div>
+      <div class="hero-ctas">
+        <a href="#contact" class="btn-primary">
+          <span data-lang="en show">Get in touch</span><span data-lang="fr">Nous contacter</span>
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </a>
+        <a href="#activities" class="btn-secondary"><span data-lang="en show">What we do</span><span data-lang="fr">Nos activites</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACTIVITIES -->
+  <section class="activities" id="activities">
+    <div class="container">
+      <div class="section-header">
+        <div class="eyebrow"><span data-lang="en show">Activities</span><span data-lang="fr">Activites</span></div>
+        <h2><span data-lang="en show">Three areas of practice</span><span data-lang="fr">Trois domaines d'intervention</span></h2>
+        <p><span data-lang="en show">Distinct disciplines, one consistent standard of rigour.</span><span data-lang="fr">Des disciplines distinctes, un meme niveau d'exigence.</span></p>
+      </div>
+      <div class="activities-grid">
+
+        <div class="activity-card">
+          <div class="activity-num">01</div>
+          <svg class="activity-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M9 2v6l-5 9a2 2 0 0 0 2 3h12a2 2 0 0 0 2-3l-5-9V2"/><line x1="8" y1="2" x2="16" y2="2"/><line x1="7" y1="14" x2="17" y2="14"/></svg>
+          <h3 data-lang="en show">Life Sciences Advisory</h3>
+          <h3 data-lang="fr">Conseil en Sciences de la Vie</h3>
+          <p data-lang="en show">Technical due diligence and scientific assessment for investors and family offices. Evaluation of analytical methods, therapeutic platforms, and biotech assets to support informed decisions.</p>
+          <p data-lang="fr">Due diligence technique et evaluation scientifique pour investisseurs et family offices. Analyse des methodes, des plateformes therapeutiques et des actifs biotech pour eclairer les decisions.</p>
+        </div>
+
+        <div class="activity-card">
+          <div class="activity-num">02</div>
+          <svg class="activity-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6v6H9z"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="15" x2="23" y2="15"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="15" x2="4" y2="15"/></svg>
+          <h3 data-lang="en show">AI Expertise &amp; Model Training</h3>
+          <h3 data-lang="fr">Expertise IA &amp; Entrainement de Modeles</h3>
+          <p data-lang="en show">Specialist domain expertise and contribution to the training and evaluation of AI systems through international platforms, across chemistry, life sciences, and analytical disciplines.</p>
+          <p data-lang="fr">Expertise specialisee et contribution a l'entrainement et a l'evaluation de systemes d'IA via des plateformes internationales, en chimie, sciences de la vie et disciplines analytiques.</p>
+        </div>
+
+        <div class="activity-card">
+          <div class="activity-num">03</div>
+          <svg class="activity-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          <h3 data-lang="en show">Software &amp; Automation</h3>
+          <h3 data-lang="fr">Solutions Logicielles &amp; Automatisation</h3>
+          <p data-lang="en show">Design, development, and operation of software automation and communication tools for small and medium-sized enterprises. Practical, deployable systems.</p>
+          <p data-lang="fr">Conception, developpement et exploitation de solutions logicielles d'automatisation et de communication pour PME. Des systemes concrets et deployables.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- APPROACH -->
+  <section class="approach" id="approach">
+    <div class="container">
+      <div class="approach-grid">
+        <div class="approach-text">
+          <h2><span data-lang="en show">Rigour, independence, applied judgement.</span><span data-lang="fr">Rigueur, independance, jugement applique.</span></h2>
+          <p><span data-lang="en show">Our work combines hands-on analytical and bioanalytical experience with a builder's mindset. We translate scientific depth into clear, actionable insight.</span><span data-lang="fr">Notre approche associe une experience pratique en sciences analytiques et bioanalytiques a un etat d'esprit de batisseur. Nous traduisons la profondeur scientifique en analyses claires et exploitables.</span></p>
+        </div>
+        <ul class="approach-list">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            <div>
+              <strong data-lang="en show" class="block">Independent</strong><strong data-lang="fr" class="block">Independant</strong>
+              <span class="block" data-lang="en show">No conflicts, no hidden margins. We work for the decision, not a quota.</span><span class="block" data-lang="fr">Sans conflit d'interet ni marge cachee. Au service de la decision, pas d'un quota.</span>
+            </div>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            <div>
+              <strong data-lang="en show" class="block">Scientific</strong><strong data-lang="fr" class="block">Scientifique</strong>
+              <span class="block" data-lang="en show">A decade of analytical chemistry and protein therapeutics experience.</span><span class="block" data-lang="fr">Une decennie en chimie analytique et en proteines therapeutiques.</span>
+            </div>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            <div>
+              <strong data-lang="en show" class="block">Practical</strong><strong data-lang="fr" class="block">Concret</strong>
+              <span class="block" data-lang="en show">From asset evaluation to working systems delivered end to end.</span><span class="block" data-lang="fr">De l'evaluation d'actifs aux systemes operationnels livres de bout en bout.</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="eyebrow"><span data-lang="en show">Contact</span><span data-lang="fr">Contact</span></div>
+      <h2><span data-lang="en show">Let's talk</span><span data-lang="fr">Parlons-en</span></h2>
+      <p><span data-lang="en show">For enquiries regarding advisory and technical services.</span><span data-lang="fr">Pour toute demande relative aux services de conseil et techniques.</span></p>
+      <a href="mailto:contact@whitevalleypartners.com" class="contact-email">contact@whitevalleypartners.com</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <svg viewBox="0 0 80 80" fill="none" aria-hidden="true"><rect x="4" y="4" width="72" height="72" fill="none" stroke="#F8F8F7" stroke-width="3"/><text x="40" y="51" font-family="Libre Baskerville, Georgia, serif" font-size="26" font-weight="700" fill="#F8F8F7" text-anchor="middle">WV</text></svg>
+        <div class="logo-text">White Valley<span>Partners</span></div>
+      </div>
+      <p>&copy; <span id="year"></span> White Valley Partners</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  function setLang(lang){
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-lang]').forEach(function(el){
+      var base = el.getAttribute('data-lang').split(' ')[0];
+      if (base === lang) { el.classList.add('show'); }
+      else { el.classList.remove('show'); }
+    });
+    document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+    document.getElementById('btn-fr').classList.toggle('active', lang === 'fr');
+  }
+
+  document.addEventListener('DOMContentLoaded', function(){
+    var browserLang = (navigator.language || 'en').substring(0,2);
+    setLang(browserLang === 'fr' ? 'fr' : 'en');
+  });
+</script>
+
+</body>
+</html>
